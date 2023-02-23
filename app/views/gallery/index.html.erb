@@ -1,0 +1,39 @@
+
+<%= form_for(:search,:url=>"/gallery/search") do |f| %>
+<div class="container" style="margin-bottom:25px;" id="search">
+<div class="SearchBox">
+<input type="text" name="search" placeholder="Search">
+<input type="submit" value="Go">	
+</div>
+</div>
+<br>
+<br>
+<% end %>
+
+
+
+<div class="container">
+<br>
+<br>
+<h1 style=" color:#fe7865; text-align:center;">Products</h1>
+<br>
+ 
+ <section class="grid-container">
+
+<% @stores.each do |store|%> 
+<div class="card">
+   <%= image_tag  store.uploads.first , width: "100%"%> 
+   <br>
+  <p style="font-size:20px; color:#fe7865"><%= store.name %></p>
+  <br>
+  <p class="price">Rs.<%= store.price %></p>
+  <br>
+  
+  <p class="modernWay"><%= store.description %></p>
+  <br>
+  <p><%= button_to 'Buy now' , line_items_path(store_id: store)%></p>
+</div>
+<% end %>
+<section>
+</div>
+

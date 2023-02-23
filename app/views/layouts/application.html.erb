@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HandloomHut</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+     <% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="" style="color:#fe7865;">
+                          <i class="fa-regular fa-reel"></i>Handloom-Hut
+                        </a> <!-- Logo -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                            <span class="bar-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                
+                                <% if user_signed_in? %>
+                                <li class="nav-item">
+                                        <%= link_to "Home", root_path , class: "navbar-link"  %>
+                                    </li>
+                                    <li class="nav-item">
+                                        <%= link_to "Products", gallery_index_path , class: "navbar-link"  %>
+                                    </li>
+                                    <li class="nav-item">
+                                        <%= link_to "Edit profile", edit_user_registration_path, class: "navbar-link" %> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#search" class="navbar-link">Search</a>
+                                     </li>
+                                     <% if current_cart.line_items.empty?%>
+                                    <li class="nav-item">
+                                    <%= link_to "Cart", gallery_cart_path , class:"navbar-link" %>
+                                    </li>
+                                    <% else %>
+                                    <li class="nav-item">
+                                        <%= link_to "Cart" , cart_path(current_cart), class: "navbar-link"  %>
+                                    </li>
+                                    <% end %>
+                                    <li class="nav-item">
+                                        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"  %>
+                                    </li>
+                                    
+                                    
+                                    <% else %>
+                                     <% if session[:admin]%>
+                                   <li class="nav-item">
+                                        <%= link_to "Admin Logout",:controller=> :admin ,:action=> :logout, class: "navbar-link"  %> 
+                                    </li>
+                                    <% else %>
+                                    <li class="nav-item">
+                                        <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %> 
+                                    </li>
+                                    <li class="nav-item">
+                                        <%= link_to "Login", new_user_session_path, class: "navbar-link"  %>
+                                    </li> 
+                                    
+                                    <li class="nav-item">
+                                        <%= link_to "Admin Login", admin_login_path, class: "navbar-link"  %>
+                                    </li>     
+
+                                    <% end %>
+                                <% end %>
+                               
+                               
+                            </ul> <!-- navbar nav -->
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+
+          
+
+ 
+          <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+ 
+   
+  
+    
+    <div style="margin-top:12%;">
+        <%= yield %>
+    </div>
+   
+
+   
+
+ <footer >
+        <div class="container">
+            <div class="footer-widget pt-75 pb-120">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 col-sm-7">
+                        <div class="footer-logo mt-40">
+                            <a href="#" style="color:#fe7865; font-size:27px;">
+                                Handloom-Hut
+                            </a>
+                            <p class="mt-10">We are here to help you. <br>
+                            Follow Us</p>    
+                            <ul class="footer-social mt-25">
+                                <li><a href="https://www.linkedin.com/in/navya-a-250744209/"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/navya1511"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                            </ul>
+                        </div> <!-- footer logo -->
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-3 col-sm-5">
+                        <div class="footer-link mt-50">
+                            <h5 class="f-title">Email Us</h5>
+                            <ul>
+                                <li><a href="https://www.gmail.com"><i class="fa-solid fa-envelope"></i> For Feedback</a></li>
+                                
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-7">
+                        <div class="footer-info mt-50">
+                            <h5 class="f-title">Contact Info</h5>
+                            <ul>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Phone :</span>
+                                        <div class="footer-info-content">
+                                            <p>+91 8059002823</p>
+                                            
+                                        </div>
+                                    </div> <!-- single footer info -->
+                                </li>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Email :</span>
+                                        <div class="footer-info-content">
+                                            <p>navyaarora1530@gmail.com</p>
+                                            
+                                        </div>
+                                    </div> <!-- single footer info -->
+                                </li>
+                                <li>
+                                    <div class="single-footer-info mt-20">
+                                        <span>Address :</span>
+                                        <div class="footer-info-content">
+                                            <p>Panipat , Haryana</p>
+                                        </div>
+                                    </div> <!-- single footer info -->
+                                </li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- footer widget -->
+            <div class="footer-copyright pt-15 pb-15">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright text-center">
+                            <p>Designed by <a href="" rel="nofollow">Navya</a></p>
+                        </div> <!-- copyright -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!--  footer copyright -->
+        </div> <!-- container -->
+    
+    </footer>
+
+  </body>
+</html>

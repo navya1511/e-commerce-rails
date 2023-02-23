@@ -1,0 +1,71 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// .notice, #notice { 
+//     background: rgb(151, 151, 22); 
+//     border-radius: 0.5em; 
+//     border: solid 0.177em #882; 
+//     color: #882;
+//     font-weight: bold;
+//     margin-bottom: 1em;
+//     padding: 1em 1.414em;
+//     text-align: center;
+//   }
+// #fe7865
+  
+.cart_title{
+   text-align: center;
+   color: #fe7865;
+   font-size:60px;
+   border: 1px solid #fe7865;
+   border-radius: 20px;
+   
+  
+}
+.cart{
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: auto;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding: 20px;
+   
+    text-align: center;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+table ,th,td, tr{
+   
+   border-bottom: 1px solid rgb(246, 170, 142);
+   border-spacing: 5px 1rem;
+   
+}
+table {
+  width: 100%;
+  border-spacing: 1em 0.5em;
+  
+}
+.cart_button {
+  background-color: #fe7865 ;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+th{
+  font-size: 30px;
+}
+tbody td {
+  font-size: 135%;
+  }
+
+

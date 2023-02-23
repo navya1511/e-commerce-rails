@@ -1,0 +1,213 @@
+// Place all the styles related to the gallery controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    display: flex;
+    padding: 20px;
+   font-size: 30px;
+    text-align: center;
+    max-height: 700px;
+    margin-bottom: 10px;
+    
+}
+  .card img{
+   width:300px;
+   height: 400px;
+  }
+  .modernWay {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+   
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card input[type="submit"] {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #fe7865;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card input[type="submit"]:hover {
+    opacity: 0.7;
+  }
+//   .products {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+  
+.checkout_card {
+	width: 60rem;
+    margin: auto;
+    background: white;
+    position:center;
+    align-self: center;
+    top: 50rem;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.leftside {
+	
+	width: 25rem;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.product {
+    object-fit: cover;
+	width: 100%;
+    height: 100%;
+    
+}
+
+.rightside {
+    background-color: #ffffff;
+	width: 35rem;
+	border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+}
+
+p{
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}
+.mainscreen
+{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+  flex-direction: column;
+  color:#fe7865;
+}
+.inputbox
+{
+    // color:#fe7865;
+	 width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+  outline:none;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv_text{
+    padding-right: 1rem;
+}
+.expcvv_text2{
+    padding:0 1rem;
+}
+
+.button{
+    background: linear-gradient(
+135deg
+, #fe7865 0%, #e95845 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width:100%;
+    letter-spacing: .11rem;
+    outline:none;
+}
+
+.button:hover
+{
+	transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #ff6955;
+}
+
+@media only screen and (max-width: 1000px) {
+    .checkout_card{
+        flex-direction: column;
+        width: auto;
+      
+    }
+
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      border-top-right-radius:0;
+      border-radius:0;
+    }
+
+    .rightside{
+        width:auto;
+        border-bottom-left-radius: 1.5rem;
+        padding:0.5rem 3rem 3rem 2rem;
+      border-radius:0;
+    }
+}
+.SearchBox  {
+  float: right;
+  padding: 6px;
+  border: none;
+}
+  
+.SearchBox input[type=text]  {
+  border-color:#fe7865;
+  padding: 6px;
+  border-radius : 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  width: 20vw;
+}
+
+.SearchBox input[type=submit]  {
+  border-color:#fe7865;
+  background-color: #fe7865;
+  color: #ffffff;
+  padding: 6px;
+  border-radius : 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
