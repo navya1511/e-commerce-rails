@@ -1,21 +1,19 @@
 <div class="container_login" style="top:30vh;">  
     <div class="login form">
-<%= flash[:notice] %>
-<header>Admin Login</header>
-<%= form_with url: "/admin/login/" , method: :post do |f|%>
-<div>
-<%= f.label :email, "Email"%>
-<%= f.text_field :email%>
-</div>
-<div>
-<%= f.label :password ,"password" %>
-<%= f.password_field :password%>
-</div>
-<div>
-<%= f.submit "Sign In" , class: "button"%>
-</div>
-
-
-<% end %>
-</div>
+    <%= flash[:notice] %>
+    <header>Admin Login</header>
+        <%= form_with url: "/admin/login/" , method: :post do |f|%>
+            <div>
+            <%= f.label :email, "Email"%>
+            <%= f.text_field :email%>
+            </div>
+            <div>
+            <%= f.label :password ,"password" %>
+            <%= f.password_field :password%>
+            </div>
+            <div>
+            <%= f.submit "Sign In" , class: "button"%>
+            </div>
+        <% end %>   
+    </div>
 </div>

@@ -14,7 +14,7 @@ class AdminController < ApplicationController
 
   def logout
     session.delete(:admin)
-  flash[:notice] = "You are logged out"
-  redirect_to user_session_url
+    flash[:notice] = "You are logged out"
+    redirect_to user_session_url
   end
 end

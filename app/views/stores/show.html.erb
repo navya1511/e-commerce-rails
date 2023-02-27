@@ -1,50 +1,48 @@
 <div class="cart">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 
-<p>
-<strong>Uploads:</strong>
-  <% @store.uploads.each do |upload| %> <%= image_tag upload , width: "250px" , style:"
-  border-radius:9px;
-  padding:5px;
-  
-  "
-  %> <% end %>
-</p>
-<br>
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
-<br>
-<p>
-  <strong>Category:</strong>
-  <%= @store.category %>
-</p>
-<br>
-<p>
-  <strong>Color:</strong>
-  <%= @store.color %>
-</p>
-<br>
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
-<br>
-<p>
-  <strong>Price:</strong>
-  <%= @store.price %>
-</p>
-<br>
-<%= link_to 'Edit', edit_store_path(@store) , style:"
-   font-size: 16px;
-   color: orangered;
-   text-decoration: none;
- "%> |
-<%= link_to 'Back', stores_path ,style:"
-   font-size: 16px;
-   color: orangered;
-   text-decoration: none;
- "%>
+  <p>
+  <strong>Uploads:</strong>
+    <% @store.uploads.each do |upload| %> <%= image_tag upload , width: "250px" , style:"
+    border-radius:9px;
+    padding:5px;"
+    %> <% end %>
+  </p>
+  <br>
+  <p>
+    <strong>Name:</strong>
+    <%= @store.name %>
+  </p>
+  <br>
+  <p>
+    <strong>Category:</strong>
+    <%= @store.category %>
+  </p>
+  <br>
+  <p>
+    <strong>Color:</strong>
+    <%= @store.color %>
+  </p>
+  <br>
+  <p>
+    <strong>Description:</strong>
+    <%= @store.description %>
+  </p>
+  <br>
+  <p>
+    <strong>Price:</strong>
+    <%= @store.price %>
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_store_path(@store) , style:"
+    font-size: 16px;
+    color: orangered;
+    text-decoration: none;
+  "%> |
+  <%= link_to 'Back', stores_path ,style:"
+    font-size: 16px;
+    color: orangered;
+    text-decoration: none;
+  "%>
 </div>

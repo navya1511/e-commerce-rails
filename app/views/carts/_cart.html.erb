@@ -1,32 +1,32 @@
 <div class="cart">
-<% unless cart.line_items.empty? %>
-<h2 class="cart_title">Your Cart</h2>
-<br>
-<br>
-<br>
-<br>
-<table cellspacing="1" cellpadding="1">
-    <th>Name</th>
-	<th>Price</th>
-	<th>Quantity</th>
-	<th>Total</th>
-	<%= render(cart.line_items) %>
-	<tr>
-		<td colspan="3">Grand Total</td>
-		<td class="total_cell"><%= number_to_currency(cart.total_price)  %></td>
-	</tr>
-</table>
-<br>
-<br>
+	<% unless cart.line_items.empty? %>
+	<h2 class="cart_title">Your Cart</h2>
+	<br>
+	<br>
+	<br>
+	<br>
+	<table cellspacing="1" cellpadding="1">
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+		<th>Total</th>
+		<%= render(cart.line_items) %>
+		<tr>
+			<td colspan="3">Grand Total</td>
+			<td class="total_cell"><%= number_to_currency(cart.total_price)  %></td>
+		</tr>
+	</table>
+	<br>
+	<br>
 
-<%= button_to 'Empty Cart', cart , :method => :delete, :confirm => 'Are you sure?' , class:"cart_button"%>
-<p>
-	<%= link_to "Continue Shopping", gallery_index_path, :class=>"cart_button"%> 
-	<% if user_signed_in? %>
-    <%= link_to "Checkout" , gallery_checkout_path , :amount=>cart.total_price , :class=>"cart_button"%>
-	<% else %>
-	<%= link_to "Checkout", new_user_session_path , :class=>"cart_button"%>
+	<%= button_to 'Empty Cart', cart , :method => :delete, :confirm => 'Are you sure?' , class:"cart_button"%>
+	<p>
+		<%= link_to "Continue Shopping", gallery_index_path, :class=>"cart_button"%> 
+		<% if user_signed_in? %>
+		<%= link_to "Checkout" , gallery_checkout_path , :amount=>cart.total_price , :class=>"cart_button"%>
+		<% else %>
+		<%= link_to "Checkout", new_user_session_path , :class=>"cart_button"%>
+		<% end %>
+	</p>
 	<% end %>
-</p>
-<% end %>
 </div>
